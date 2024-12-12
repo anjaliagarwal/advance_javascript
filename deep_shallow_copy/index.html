@@ -1,0 +1,33 @@
+<!-- 
+        CALL BY REFERENCE  ---  SHALLOW COPY  ----  MUTABLE OBJECT 
+
+        CALL BY VALUE ---- DEEP COPY ---   IMMUTABLE OBJECT 
+
+        Primitive Type - number, boolean, string , null , undefined - immutable - deep copy only
+
+        Shallow Copy -  when we make a copy of original variable into another variable(copied) by 
+                        using assignment operator(=) that time only the reference address of original 
+                        variable is copied into another variable instead of original values 
+
+                        So at last both variables refer to the same value. So when we make any changes 
+                        in new variable if will also mutable or change the original variable.
+
+        Deep Copy - it is also identified by pass by Value, when we make a copy of variable into another 
+                    variable by using assignment operator at that time all the values(object, array )
+                    along with reference address of original variable is copied into another variable.
+
+                    At last, both variables refer to different referenced values. So when we make change
+                    in new variable it won't mutable the original variable.
+
+        json.strigyfy() is not capable to copy if function is there in the object
+
+    
+-->
+
+<html>
+    <body>
+        <h1>Deep and Shallow Copy</h1>
+
+        <script src="index.js"></script>
+    </body>
+</html>

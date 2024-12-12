@@ -1,0 +1,39 @@
+<!-- 
+            Optional Chaining
+
+    The optional chaining ?. is a safe way to access nested object properties,
+        even if an intermediate property doesn't exist.
+
+    The optional chaining ?. stops the evaluation if the value before ?. is 
+        undefined or null and returns undefined.
+
+Optional Chaining with function - getName?.()
+
+
+DO NOT OVERUSE the OPTIONAL CHAINING
+
+We should use ?. only where it is ok that something doesn't exist.
+
+For Example, if according to our coding logic user object must exist, but address is optional,
+            then we should write user.address?.street , 
+            but not user?.address?.street.
+
+    So,if user happens to be undefined due to a mistake, we will see a programming 
+            error about it and fix it.
+
+        Otherwise, coding errors can be silenced where not appropriate 
+        and become more difficult to debug.
+    
+
+-->
+
+<!DOCTYPE html> 
+
+<body>
+
+    <h1>Optional Chaining</h1>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

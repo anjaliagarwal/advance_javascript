@@ -1,0 +1,123 @@
+<!-- 
+    Main Points for the Variable Concepts 
+
+    1. var ES5   /  let and const ES6  
+    2. basis of scope these let and const is different from var keyword
+    3. SCOPE - it decides the accessibility of data whether it can use here or not and 
+        curly braces create a block
+    4. In ES5, only functions can create a scope  - 
+        inside the function - variable is private 
+        outside the function - global/ public
+
+        A part from function no other block is define for scope
+
+    5. Hoisting is the concept of the JavaScript where internally declaration of function,
+        variables, classes or imports to the top of their scope before the code is executed.
+
+        In ES5 , if we declare the call before the declaration - we don't get any error it just give undefined
+ 
+        In ES6 , we cannot use the variable before declaring it otherwise error will occur.
+
+    6. In ES5, variable can be redeclare in the program 
+        In ES6, using const we can prevent use of redeclaration and overwritten
+                let also prevent redecalaration if scope will same 
+
+    7. let - allow reinitialize the variable 
+        const - cannot re-initialize the variable or re-declare 
+-->
+
+
+<html>
+
+    <body>
+        <h1>let and const in ES6</h1>
+
+        <ol>
+            <li>var</li>
+            <li>let</li>
+            <li>const</li>
+        </ol>
+
+        <strong>Variables declared with "var" are function scoped.</strong>
+    <br/>
+
+        <strong>"let" and "const" are block scoped.</strong>
+
+        <hr/>
+            <h3 style="color: green;">Example</h3>
+
+            <script>
+
+                // ES5 - hoisting called - don't give error result will be undefined
+
+                console.log(title);
+                var title = "ES5 Test";
+                // console.log(title);
+
+
+                //scope 
+
+                var firstName = "John";  // Public
+                // only function can create a scope
+                function getName() {
+                    var firstName = "Peter";  // Private
+                    console.log('Inside function', firstName);
+                }
+
+                getName();
+
+                console.log('Outside function :', firstName);
+
+                console.log('#######IF Block##############');
+
+                // will not create private block Trump will be global one and variable can redeclare
+                if(true) {
+                    var firstName="Trump";
+                    console.log('Inside if Block :', firstName)
+                }
+
+                console.log('Outside if block : ', firstName)
+
+                // loop 
+
+                var i = 100;
+
+                for(var i = 0; i <= 10; i++) {
+                    console.log(i);
+                }
+                console.log(i);
+
+                //ES6 - error will occur 
+
+                // console.log(heading);
+                let heading = "ES6 Test";
+                console.log(heading);
+
+                // create a scope
+                if(true) {
+                    let firstName="Kite";
+                    console.log('Inside if Block :', firstName)
+                }
+
+                console.log('Outside if block : ', firstName)
+
+                // loop
+
+                let j = 100;
+
+                for(let j = 0; j <= 10; j++) {
+                    console.log('inner loop value : ',j);
+                }
+
+                console.log('outside loop value :', j);
+
+                // const and let 
+
+                const MAX_UPLOAD = 100;
+                // MAX_UPLOAD = 50
+                console.log(MAX_UPLOAD);
+
+            </script>
+    </body>
+    
+</html>
